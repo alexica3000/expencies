@@ -66,13 +66,15 @@ namespace Expencies.Core.Managers
         }
         private bool ifExist(Expense expense, SearchParams searchParams)
         {
-
-              if((string.IsNullOrWhiteSpace(searchParams.Name) || expense.Name.Contains(searchParams.Name))
-                 && (string.IsNullOrWhiteSpace(searchParams.Currency) || (expense.Currency == searchParams.Currency)))
-                 
-                {
-                return true;
-				}
+			if(
+				(string.IsNullOrWhiteSpace(searchParams.Name) || expense.Name.Contains(searchParams.Name))
+                 && (string.IsNullOrWhiteSpace(searchParams.Currency) || (expense.Currency == searchParams.Currency))
+				 && (string.IsNullOrWhiteSpace(searchParams.Location) || (expense.Location == searchParams.Location))
+				 && ((expense.Date == searchParams.Date) || (expense.Amount == searchParams.Amount))
+				)
+            {
+				return true;
+			}
 
 			return false;
 		}

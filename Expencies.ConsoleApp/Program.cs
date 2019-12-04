@@ -1,4 +1,5 @@
 ﻿using Expencies.Core.Managers;
+using Expencies.Domain;
 using Expencies.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -41,28 +42,31 @@ namespace Expencies.ConsoleApp
 
             expenseManager.Add(expense);
 
-
             expense = new Expense
             {
                 ExpenseId = Guid.NewGuid(),
-                Name = "Bread",
+                Name = "Bread2",
                 Amount = 20,
                 Date = DateTime.Now,
-                Location = "Mall",
-                Currency = "MDL"
+                Location = "Unic",
+                Currency = "Euro"
             };
 
             expenseManager.Add(expense);
 
-            List<Expense> selectedExpencies = expenseManager.Search();
+            SearchParams search = new SearchParams
+            {
+                Amount = 18
+            };
+            
+
+            List<Expense> selectedExpencies = expenseManager.Search(search);
 
 			foreach (var expence in selectedExpencies)
 			{
-                System.Console.WriteLine(expense.ToShow());
-                
-
+                System.Console.WriteLine(expence.ToShow());
             }
-
+            
 			System.Console.ReadKey();
 		}
 	}

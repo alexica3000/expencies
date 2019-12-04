@@ -19,7 +19,7 @@ namespace Expencies.Domain.Models
         public string ToShow()
         {
             var Result = string.Empty;
-            Result += $" ExpenseId: {ExpenseId}; Name: {Name}; Amount: {Amount}[{Currency}] ";
+            Result += $" ExpenseId: {ExpenseId}; Name: {Name}; Amount: {Amount}[{Currency}]; Location: {Location} ";
 
             return Result;
         }
