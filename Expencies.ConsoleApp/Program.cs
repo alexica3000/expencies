@@ -3,6 +3,7 @@ using Expencies.Domain;
 using Expencies.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,18 +57,18 @@ namespace Expencies.ConsoleApp
 
             SearchParams search = new SearchParams
             {
-                Amount = 18
+                Amount = 20
             };
             
-
             List<Expense> selectedExpencies = expenseManager.Search(search);
 
-			foreach (var expence in selectedExpencies)
+            foreach (var expence in selectedExpencies)
 			{
-                System.Console.WriteLine(expence.ToShow());
+                Console.WriteLine(expence.ToShow());
+                expence.ToWriteInFile();
             }
             
-			System.Console.ReadKey();
+            Console.ReadKey();
 		}
 	}
 }
