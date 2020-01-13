@@ -83,5 +83,10 @@ namespace Expencies.Core.Managers
         {
             throw new NotImplementedException();
         }
-    }
+
+		public void GenerateTestData()
+		{
+
+		}
+	}
 }

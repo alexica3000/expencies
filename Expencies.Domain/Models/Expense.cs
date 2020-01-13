@@ -15,6 +15,8 @@ namespace Expencies.Domain.Models
         public DateTime Date { get; set; }
         public string Location { get; set; }
         public string Currency { get; set; }
+        public Guid UserId;
+        public User User;
 
 
         public string ToShow()

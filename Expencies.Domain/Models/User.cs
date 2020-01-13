@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace Expencies.Domain.Models
 {
+    public enum SocialStatus
+    {
+        Unknown = 0,
+        Worker = 1,
+        Student = 2,
+        Pensioner = 3,
+        Child = 4
+    }
+
     public class User
     {
         public Guid UserId;
