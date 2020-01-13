@@ -14,59 +14,59 @@ namespace Expencies.ConsoleApp
 	{
 		static void Main(string[] args)
 		{
-			ExpenseManager expenseManager = new ExpenseManager();
+			//ExpenseManager expenseManager = new ExpenseManager();
 
-			var dateToday = DateTime.Now;
+			//var dateToday = DateTime.Now;
 
-			var expense = new Expense
-			{
-				ExpenseId = Guid.NewGuid(),
-				Name = "Milk",
-				Amount = 18,
-				Date = DateTime.Now,
-				Location = "Mall",
-				Currency = "MDL"
-			};
+			//var expense = new Expense
+			//{
+			//	ExpenseId = Guid.NewGuid(),
+			//	Name = "Milk",
+			//	Amount = 18,
+			//	Date = DateTime.Now,
+			//	Location = "Mall",
+			//	Currency = "MDL"
+			//};
 
-            expenseManager.Add(expense);
+   //         expenseManager.Add(expense);
 
 
-            expense = new Expense
-            {
-                ExpenseId = Guid.NewGuid(),
-                Name = "Bread",
-                Amount = 20,
-                Date = DateTime.Now.AddDays(-7),
-                Location = "Mall",
-                Currency = "MDL"
-            };
+   //         expense = new Expense
+   //         {
+   //             ExpenseId = Guid.NewGuid(),
+   //             Name = "Bread",
+   //             Amount = 20,
+   //             Date = DateTime.Now.AddDays(-7),
+   //             Location = "Mall",
+   //             Currency = "MDL"
+   //         };
 
-            expenseManager.Add(expense);
+   //         expenseManager.Add(expense);
 
-            expense = new Expense
-            {
-                ExpenseId = Guid.NewGuid(),
-                Name = "Bread2",
-                Amount = 20,
-                Date = DateTime.Now,
-                Location = "Unic",
-                Currency = "Euro"
-            };
+   //         expense = new Expense
+   //         {
+   //             ExpenseId = Guid.NewGuid(),
+   //             Name = "Bread2",
+   //             Amount = 20,
+   //             Date = DateTime.Now,
+   //             Location = "Unic",
+   //             Currency = "Euro"
+   //         };
 
-            expenseManager.Add(expense);
+   //         expenseManager.Add(expense);
 
-            SearchParams search = new SearchParams
-            {
-                Amount = 20
-            };
+   //         SearchParams search = new SearchParams
+   //         {
+   //             Amount = 20
+   //         };
             
-            List<Expense> selectedExpencies = expenseManager.Search(search);
+   //         List<Expense> selectedExpencies = expenseManager.Search(search);
 
-            foreach (var expence in selectedExpencies)
-			{
-                Console.WriteLine(expence.ToShow());
-                expence.ToWriteInFile();
-            }
+   //         foreach (var expence in selectedExpencies)
+			//{
+   //             Console.WriteLine(expence.ToShow());
+   //             expence.ToWriteInFile();
+   //         }
             
             Console.ReadKey();
 		}
